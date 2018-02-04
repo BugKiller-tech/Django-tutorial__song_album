@@ -19,7 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from music import views as musicViews
+
+
 urlpatterns = [
+    path('', musicViews.IndexView.as_view(), name='root'),
     path('admin/', admin.site.urls),
     path('music/', include('music.urls'))
 ]
